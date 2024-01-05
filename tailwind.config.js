@@ -20,6 +20,16 @@ module.exports = {
       },
       animation: {
         bounce_slow: 'bounce-slow ease infinite'
+      },
+      backgroundImage: {
+        'project-image': "url('https://ik.imagekit.io/bqofr3ncj/Portfolio/Re%CC%81seau%20(2).png?updatedAt=1704295302816')"
+      },
+      backgroundSize: {
+        '50%':'50%'
+      },
+      transitionProperty: {
+        'height':'height',
+        'max-height':'max-height'
       }
     },
   },
@@ -37,6 +47,25 @@ module.exports = {
           },
           '100%': {
             transform: 'scale(0.96)',
+          },
+        },
+        '@keyframes pulsate-fwd-xl': {
+          '0%': {
+            transform: 'scale(0.98)',
+          },
+          '50%': {
+            transform: 'scale(1.01)',
+          },
+          '100%': {
+            transform: 'scale(0.98)',
+          },
+        },
+        '@keyframes height-switch': {
+          '0%': {
+            transform: 'height: 0%',
+          },
+          '100%': {
+            transform: 'height: 100%',
           },
         },
       });
@@ -57,6 +86,25 @@ module.exports = {
             transform: 'scale(0.96)',
           },
         },
+        '@-webkit-keyframes pulsate-fwd-xl': {
+          '0%': {
+            transform: 'scale(0.98)',
+          },
+          '50%': {
+            transform: 'scale(1.01)',
+          },
+          '100%': {
+            transform: 'scale(0.98)',
+          },
+        },
+        '@-webkit-keyframes height-switch': {
+          '0%': {
+            transform: 'height: 0%',
+          },
+          '100%': {
+            transform: 'height: 100%',
+          },
+        },
       });
 
       // Optionally, you can create utilities for these keyframes
@@ -64,6 +112,12 @@ module.exports = {
         '.animate-pulsate-fwd': {
           animation: 'pulsate-fwd 8s ease infinite',
         },
+        '.animate-pulsate-fwd-xl': {
+          animation: 'pulsate-fwd-xl 8s ease infinite',
+        },
+        '.height-switch':{
+          animation: 'height-switch .3s ease-in'
+        }
       };
 
       addUtilities(utilities);

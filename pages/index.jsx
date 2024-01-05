@@ -7,6 +7,7 @@ export default function Home() {
     <>
       {/* Main hero section */}
       <motion.div 
+        id="welcome"
         className="relative flex flex-col lg:justify-center items-center w-full h-[100%] z-60"
 
         initial={{ opacity: 0 }}
@@ -38,11 +39,11 @@ export default function Home() {
 
         {/* Desktop socials icons */}
         <div className="hidden lg:flex lg:absolute top-[70%] left-[-10%] flex-col justify-around items-center w-[26%]">
-          <i className="fa-brands fa-instagram text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>
+          <i aria-hidden className="fa-brands fa-instagram text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>
           <div className="bg-[#36456F] w-[2.5px] h-[35px] mx-2 rounded-lg transform rotate-[90deg]"></div>{/* Divider line */}
-          <i className="fa-brands fa-linkedin text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>
+          <i aria-hidden className="fa-brands fa-linkedin text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>
           <div className="bg-[#36456F] w-[2.5px] h-[35px] mx-2 rounded-lg transform rotate-[90deg]"></div>{/* Divider line */}
-          <i className="fa-brands fa-github text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>
+          <i aria-hidden className="fa-brands fa-github text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>
         </div>
 
         {/* Blue line */}
@@ -58,7 +59,14 @@ export default function Home() {
       </motion.div>
 
       {/* About me section */}
-      <div className="w-full h-[90%] p-6 flex flex-col items-center text-[#36456F] lg:flex-row lg:justify-between">
+      <motion.div 
+      id="about-me"
+      className="w-full h-[90%] p-6 flex flex-col items-center text-[#36456F] lg:flex-row lg:justify-between"
+      
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.1 } }}
+      >
         <div className="text-center md:w-[80%] lg:order-2 lg:w-[40%] lg:mx-6">
           <h2 className="text-3xl font-bold lg:text-5xl lg:p-3">- Who am I ? -</h2>
           {/* Small about me paragraph */}
@@ -79,26 +87,26 @@ export default function Home() {
         <div className="relative w-full h-full flex flex-row justify-center items-center lg:order-1 lg:w-[50%]">
           {/* Node js logo */}
           <div className="absolute top-[8%] left-[18%] lg:top-[20%] lg:left-[28%] p-3 rounded-2xl bg-white shadow-[#00000066] shadow-xl md:w-[22%] md:h-[22%] md:flex md:justify-center md:items-center animate-pulsate-fwd">
-            <i className="fa-brands fa-node-js text-6xl md:text-8xl"></i>
+            <i aria-hidden className="fa-brands fa-node-js text-6xl md:text-8xl"></i>
           </div>
           {/* Python logo */}
           <div className="absolute top-[12%] right-[20%] lg:right-[8%] p-3 rounded-2xl bg-white shadow-[#00000066] shadow-xl md:w-[22%] md:h-[22%] md:flex md:justify-center md:items-center animate-pulsate-fwd">
-            <i className="fa-brands fa-python text-6xl md:text-8xl"></i>
+            <i aria-hidden className="fa-brands fa-python text-6xl md:text-8xl"></i>
           </div>
           {/* Css logo */}
           <div className="absolute left-[10%] bottom-[5%] md:bottom-[28%] md:left-[5%] lg:left-[2%] lg:bottom-[25%] p-3 rounded-2xl bg-white shadow-[#00000066] shadow-xl md:w-[22%] md:h-[22%] md:flex md:justify-center md:items-center animate-pulsate-fwd">
-            <i className="fa-brands fa-css3-alt text-6xl md:text-8xl"></i>
+            <i aria-hidden className="fa-brands fa-css3-alt text-6xl md:text-8xl"></i>
           </div>
           {/* Javascript logo */}
           <div className="absolute bottom-[-8%] md:bottom-[3%] lg:bottom-[3%] p-3 rounded-2xl bg-white shadow-[#00000066] shadow-xl md:w-[22%] md:h-[22%] md:flex md:justify-center md:items-center animate-pulsate-fwd">
-            <i className="fa-brands fa-js text-6xl md:text-8xl"></i>
+            <i aria-hidden className="fa-brands fa-js text-6xl md:text-8xl"></i>
           </div>
           {/* React logo */}
           <div className="absolute right-[1%] bottom-[15%] md:right-[8%] lg:bottom-[25%] lg:right-[3%] p-3 rounded-2xl bg-white shadow-[#00000066] shadow-xl md:w-[22%] md:h-[22%] md:flex md:justify-center md:items-center animate-pulsate-fwd">
-            <i className="fa-brands fa-react text-6xl md:text-8xl"></i>
+            <i aria-hidden className="fa-brands fa-react text-6xl md:text-8xl"></i>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Services section */}
       <div className="h-full md:h-[80%] lg:h-full w-full flex flex-col items-center text-[#36456F]">
@@ -108,7 +116,7 @@ export default function Home() {
         <div className="h-full w-full lg:w-[80%] flex flex-col md:flex-row md:flex-wrap lg:p-6 justify-around items-center">
           <div className="w-[40%] h-[25%] md:w-[45%] md:h-[33%] lg:w-[34%] lg:h-[44%] flex justify-center items-end shadow-[#00000066] shadow-2xl rounded-3xl active:scale-[0.90] transform-all ease duration-300 animate-pulsate-fwd lg:animate-none">
             <div className="w-[90%] h-[80%] md:h-[70%] flex flex-col justify-between items-center">
-              <i className="fa-sharp fa-light fa-pen-nib text-7xl md:text-8xl lg:text-9xl"></i>
+              <i aria-hidden className="fa-sharp fa-light fa-pen-nib text-7xl md:text-8xl lg:text-9xl"></i>
               <div className="w-full text-center">
                 <p className="text-xl md:text-4xl md:p-2 lg:p-1 font-regular">web design</p>
                 <div className="h-[3px] w-[20%] bg-[#36456F] mx-auto rounded-xl mb-2 md:mb-4 lg:mb-6"></div>
@@ -118,7 +126,7 @@ export default function Home() {
 
           <div className="w-[40%] h-[25%] md:w-[45%] md:h-[33%] lg:w-[34%] lg:h-[44%] flex justify-center items-end shadow-[#00000066] shadow-2xl rounded-3xl active:scale-[0.90] transform-all ease duration-300 animate-pulsate-fwd lg:animate-none">
             <div className="w-[90%] h-[80%] md:h-[70%] flex flex-col justify-between items-center">
-              <i className="fa-regular fa-gear-complex-code text-7xl md:text-8xl lg:text-9xl"></i>
+              <i aria-hidden className="fa-regular fa-gear-complex-code text-7xl md:text-8xl lg:text-9xl"></i>
               <div className="w-full text-center">
                 <p className="text-xl md:text-4xl md:p-2 lg:p-1 font-regular">development</p>
                 <div className="h-[3px] w-[20%] bg-[#36456F] mx-auto rounded-xl mb-2 md:mb-4 lg:mb-6"></div>
@@ -128,7 +136,7 @@ export default function Home() {
 
           <div className="w-[40%] h-[25%] md:w-[45%] md:h-[33%] lg:w-[34%] lg:h-[44%] flex justify-center items-end shadow-[#00000066] shadow-2xl rounded-3xl active:scale-[0.90] transform-all ease duration-300 animate-pulsate-fwd lg:animate-none">
             <div className="w-[90%] h-[80%] md:h-[70%] flex flex-col justify-between items-center">
-              <i className="fa-regular fa-list-check text-7xl md:text-8xl lg:text-9xl"></i>
+              <i aria-hidden className="fa-regular fa-list-check text-7xl md:text-8xl lg:text-9xl"></i>
               <div className="w-full text-center">
                 <p className="text-xl md:text-4xl md:p-2 lg:p-1 font-regular">management</p>
                 <div className="h-[3px] w-[20%] bg-[#36456F] mx-auto rounded-xl mb-2 md:mb-4 lg:mb-6"></div>
@@ -145,7 +153,7 @@ export default function Home() {
           <Link href="/projects" className="my-4 text-xl lg:text-2xl font-light z-[2]">Get in touch →</Link>
           <div className="absolute bg-[#1E3050] w-[17%] h-[20%] top-[48%] left-[23%] lg:w-[8.5%] lg:h-[30%] lg:left-[40%] rounded-full z-[1]"></div>
           <svg className="hidden lg:block absolute left-[-1%] bottom-[-25%]" xmlns="http://www.w3.org/2000/svg" width="471" height="450" viewBox="0 0 471 483" fill="none">
-            <path d="M470 483C470 234.504 229.458 1.00003 0 1.00003" stroke="white" stroke-width="2"/>
+            <path d="M470 483C470 234.504 229.458 1.00003 0 1.00003" stroke="white" strokeWidth="2"/>
           </svg>
         </div>
         <div className="relative mt-auto flex flex-row items-center justify-center w-full p-2 lg:w-[40%]">
@@ -155,9 +163,9 @@ export default function Home() {
           </div>
           <div className="relative bg-white w-[8%] lg:w-[5%] h-[2px] mx-1 transform rotate-[90deg]"></div>
           <div className="w-[40%] lg:w-[32%] h-full flex flex-row justify-around items-center">
-            <i className="fa-brands fa-instagram text-2xl"></i>
-            <i className="fa-brands fa-linkedin text-2xl"></i>
-            <i className="fa-brands fa-github text-2xl"></i>
+            <i aria-hidden className="fa-brands fa-instagram text-2xl"></i>
+            <i aria-hidden className="fa-brands fa-linkedin text-2xl"></i>
+            <i aria-hidden className="fa-brands fa-github text-2xl"></i>
           </div>
         </div>
       </footer>

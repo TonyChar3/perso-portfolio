@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import Navbar from './components/navbar';
 import { useState, useEffect, useRef} from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 
 export default function App({ Component, pageProps }) {
@@ -39,8 +40,10 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Navbar isScrolling={ui_state.user_scroll} />
-      <div ref={outletRef} className="w-full h-full overflow-y-auto flex-grow">
-        <Component {...pageProps} />
+      <div ref={outletRef} className="w-full h-[100%] overflow-y-auto flex-grow">
+        <AnimatePresence mode='wait' initial={false}>
+          <Component key={pageProps.uniqueKey} {...pageProps} />
+        </AnimatePresence>
       </div>
     </>
   ) 
