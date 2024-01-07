@@ -29,11 +29,11 @@ export default function Home() {
         </div>
 
         {/* Desktop greek statue head */}
-        <Image src="https://ik.imagekit.io/bqofr3ncj/Portfolio/DALL_E_2024-01-02_22.18.35_-_A_classical_white_marble_bust_sculpture_of_a_mythical_figure_with_curly_hair_and_a_missing_nose_piece__resembling_ancient_Greek_or_Roman_art__on_a_pla-removebg-preview.png?updatedAt=1704252024319" alt="desktop greek statue head" width="600" height="600" className="hidden lg:block lg:absolute lg:bottom-[10%] lg:right-[7%]"/>
+        <Image priority src="https://ik.imagekit.io/bqofr3ncj/Portfolio/DALL_E_2024-01-02_22.18.35_-_A_classical_white_marble_bust_sculpture_of_a_mythical_figure_with_curly_hair_and_a_missing_nose_piece__resembling_ancient_Greek_or_Roman_art__on_a_pla-removebg-preview.png?updatedAt=1704252024319" alt="desktop greek statue head" width="600" height="600" className="hidden lg:block lg:absolute lg:bottom-[10%] lg:right-[7%]"/>
           
         {/* Mobile greek statue head */}
         <div className="w-full flex flex-row justify-center items-center lg:justify-end">
-          <Image src="https://ik.imagekit.io/bqofr3ncj/Portfolio/DALL_E_2024-01-02_22.18.35_-_A_classical_white_marble_bust_sculpture_of_a_mythical_figure_with_curly_hair_and_a_missing_nose_piece__resembling_ancient_Greek_or_Roman_art__on_a_pla-removebg-preview.png?updatedAt=1704252024319" alt="greek statue head" width="275" height="291" className="lg:hidden mx-5 md:w-[400px]"/>
+          <Image priority src="https://ik.imagekit.io/bqofr3ncj/Portfolio/DALL_E_2024-01-02_22.18.35_-_A_classical_white_marble_bust_sculpture_of_a_mythical_figure_with_curly_hair_and_a_missing_nose_piece__resembling_ancient_Greek_or_Roman_art__on_a_pla-removebg-preview.png?updatedAt=1704252024319" alt="greek statue head" width="275" height="291" className="lg:hidden mx-5 md:w-[400px]"/>
           <div className="absolute w-[50%] h-[3px] bg-[#36456F] bottom-[30%] left-[65%] transform rotate-[90deg] rounded-xl md:bottom-[35%] lg:hidden"></div>
         </div>
 
@@ -150,7 +150,7 @@ export default function Home() {
       <footer className="h-[60%] w-full flex flex-col items-center bg-[#36456F] text-white">
         <div className="relative w-full h-[80%] flex flex-col justify-center items-center">
           <h3 className="text-4xl lg:text-6xl font-regular">- Let's work together -</h3>
-          <Link href="/projects" className="my-4 text-xl lg:text-2xl font-light z-[2]">Get in touch →</Link>
+          <Link href="/projects#contact-me" className="my-4 text-xl lg:text-2xl font-light z-[2]">Get in touch →</Link>
           <div className="absolute bg-[#1E3050] w-[17%] h-[20%] top-[48%] left-[23%] lg:w-[8.5%] lg:h-[30%] lg:left-[40%] rounded-full z-[1]"></div>
           <svg className="hidden lg:block absolute left-[-1%] bottom-[-25%]" xmlns="http://www.w3.org/2000/svg" width="471" height="450" viewBox="0 0 471 483" fill="none">
             <path d="M470 483C470 234.504 229.458 1.00003 0 1.00003" stroke="white" strokeWidth="2"/>
