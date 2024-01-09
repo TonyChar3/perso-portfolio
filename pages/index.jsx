@@ -31,12 +31,12 @@ export default function Home() {
         </RevealAnimation>
 
         {/* Desktop greek statue head */}
-        <Image priority src="https://ik.imagekit.io/bqofr3ncj/Portfolio/DALL_E_2024-01-02_22.18.35_-_A_classical_white_marble_bust_sculpture_of_a_mythical_figure_with_curly_hair_and_a_missing_nose_piece__resembling_ancient_Greek_or_Roman_art__on_a_pla-removebg-preview.png?updatedAt=1704252024319" alt="desktop greek statue head" width="600" height="600" className="hidden lg:block lg:absolute lg:bottom-[10%] lg:right-[7%]"/>
+        <Image priority src="https://ik.imagekit.io/bqofr3ncj/tr:w-400/Portfolio/DALL_E_2024-01-02_22.18.35_-_A_classical_white_marble_bust_sculpture_of_a_mythical_figure_with_curly_hair_and_a_missing_nose_piece__resembling_ancient_Greek_or_Roman_art__on_a_pla-removebg-preview.png?updatedAt=1704252024319" alt="desktop greek statue head" width="600" height="600" className="hidden lg:block lg:absolute lg:bottom-[10%] lg:right-[7%]"/>
         
           
         {/* Mobile greek statue head */}
         <div className="w-full flex flex-row justify-center items-center lg:justify-end">
-          <Image priority src="https://ik.imagekit.io/bqofr3ncj/Portfolio/DALL_E_2024-01-02_22.18.35_-_A_classical_white_marble_bust_sculpture_of_a_mythical_figure_with_curly_hair_and_a_missing_nose_piece__resembling_ancient_Greek_or_Roman_art__on_a_pla-removebg-preview.png?updatedAt=1704252024319" alt="greek statue head" width="275" height="291" className="lg:hidden mx-5 md:w-[400px]"/>
+          <Image priority src="https://ik.imagekit.io/bqofr3ncj/tr:w-400/Portfolio/DALL_E_2024-01-02_22.18.35_-_A_classical_white_marble_bust_sculpture_of_a_mythical_figure_with_curly_hair_and_a_missing_nose_piece__resembling_ancient_Greek_or_Roman_art__on_a_pla-removebg-preview.png?updatedAt=1704252024319" alt="greek statue head" width="275" height="291" className="lg:hidden mx-5 md:w-[400px]"/>
           <div className="absolute w-[50%] h-[3px] bg-[#36456F] bottom-[30%] left-[65%] transform rotate-[90deg] rounded-xl md:bottom-[35%] lg:hidden"></div>
         </div>
 
