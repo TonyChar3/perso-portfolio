@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken';
 import fs from 'fs';
 import { NextResponse } from "next/server";
 
-const publicKey = fs.readFileSync('id_rsa_pub.pem','utf8');
+const publicKey = process.env.NEXT_PUBLIC_KEY
 
 /**
  * Serverless function to return allmy projects
