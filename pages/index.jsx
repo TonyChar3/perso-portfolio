@@ -42,13 +42,13 @@ export default function Home() {
 
         {/* Desktop socials icons */}
         <RevealAnimation className="hidden lg:flex lg:absolute top-[58%] left-[-10%] flex-col justify-around items-center w-[26%]">
-          <i aria-hidden className="fa-brands fa-x-twitter text-5xl text-[#36456F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100"></i>
+          <Link href="https://twitter.com/tonyc6731" target="_blank"><i aria-hidden className="fa-brands fa-x-twitter text-5xl text-[#36456F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100"></i></Link>
           <div className="bg-[#36456F] w-[2.5px] h-[35px] mx-2 rounded-lg transform rotate-[90deg]"></div>{/* Divider line */}
-          <i aria-hidden className="fa-brands fa-instagram text-5xl text-[#36456F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100"></i>
+          <Link href="https://www.instagram.com/tonydev.io" target="_blank"><i aria-hidden className="fa-brands fa-instagram text-5xl text-[#36456F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100"></i></Link>
           <div className="bg-[#36456F] w-[2.5px] h-[35px] mx-2 rounded-lg transform rotate-[90deg]"></div>{/* Divider line */}
-          <i aria-hidden className="fa-brands fa-linkedin text-5xl text-[#36456F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100"></i>
+          <Link href="www.linkedin.com/in/anthony-charette-3b2655252" target="_blank"><i aria-hidden className="fa-brands fa-linkedin text-5xl text-[#36456F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100"></i></Link>
           <div className="bg-[#36456F] w-[2.5px] h-[35px] mx-2 rounded-lg transform rotate-[90deg]"></div>{/* Divider line */}
-          <i aria-hidden className="fa-brands fa-github text-5xl text-[#36456F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100"></i>
+          <Link href="https://github.com/TonyChar3" target="_blank"><i aria-hidden className="fa-brands fa-github text-5xl text-[#36456F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100"></i></Link>
         </RevealAnimation>
 
         {/* Blue line */}
@@ -171,10 +171,10 @@ export default function Home() {
             </div>
             <div className="relative bg-white w-[8%] lg:w-[5%] h-[2px] mx-1 transform rotate-[90deg]"></div>
             <div className="w-[40%] lg:w-[32%] h-full flex flex-row justify-around items-center">
-              <i aria-hidden className="fa-brands fa-x-twitter text-lg md:text-2xl"></i>
-              <i aria-hidden className="fa-brands fa-instagram text-2xl"></i>
-              <i aria-hidden className="fa-brands fa-linkedin text-2xl"></i>
-              <i aria-hidden className="fa-brands fa-github text-2xl"></i>
+              <Link href="https://twitter.com/tonyc6731" target="_blank"><i aria-hidden className="fa-brands fa-x-twitter text-lg md:text-2xl"></i></Link>
+              <Link href="https://www.instagram.com/tonydev.io" target="_blank"><i aria-hidden className="fa-brands fa-instagram text-2xl"></i></Link>
+              <Link href="www.linkedin.com/in/anthony-charette-3b2655252" target="_blank"><i aria-hidden className="fa-brands fa-linkedin text-2xl"></i></Link>
+              <Link href="https://github.com/TonyChar3" target="_blank"><i aria-hidden className="fa-brands fa-github text-2xl"></i></Link>
             </div>
           </div>
         </RevealAnimation>

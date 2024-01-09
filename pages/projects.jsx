@@ -6,6 +6,7 @@ import { sanitizeInputValue } from '@/lib/security';
 import { useMyContext } from '../context/appContext';
 import LoadingSpinner from './components/LoadingSpinner';
 import RevealAnimation from './components/scroll_animate/RevealAnimate';
+import Link from 'next/link';
 
 const projects = () => {
 
@@ -236,10 +237,10 @@ const projects = () => {
                     </div>
                     <div className="w-[5px] h-[80%] bg-white mx-2 rounded-lg"></div>
                     <div className="w-[42%] md:w-[16%] lg:w-[15%] flex flex-row justify-around items-center">
-                        <i aria-hidden className="fa-brands fa-x-twitter text-lg md:text-2xl mx-1"></i>
-                        <i aria-hidden className="fa-brands fa-instagram text-2xl mx-1"></i>
-                        <i aria-hidden className="fa-brands fa-linkedin text-2xl mx-1"></i>
-                        <i aria-hidden className="fa-brands fa-github text-2xl mx-1"></i>
+                        <Link href="https://twitter.com/tonyc6731" target="_blank"><i aria-hidden className="fa-brands fa-x-twitter text-lg md:text-2xl mx-1"></i></Link>
+                        <Link href="https://www.instagram.com/tonydev.io" target="_blank"><i aria-hidden className="fa-brands fa-instagram text-2xl mx-1"></i></Link>
+                        <Link href="www.linkedin.com/in/anthony-charette-3b2655252" target="_blank"><i aria-hidden className="fa-brands fa-linkedin text-2xl mx-1"></i></Link>
+                        <Link href="https://github.com/TonyChar3" target="_blank"><i aria-hidden className="fa-brands fa-github text-2xl mx-1"></i></Link>
                     </div>
                 </RevealAnimation>
                 <svg xmlns="http://www.w3.org/2000/svg" width="437" height="632" viewBox="0 0 437 632" fill="none" className="hidden lg:block absolute right-0">
