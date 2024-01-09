@@ -8,9 +8,7 @@ const RevealAnimation = ({ children, className }) => {
     const mainControls = useAnimation();
   
     useEffect(() => {
-      console.log(isInView)
       if(isInView){
-        console.log(mainControls)
         mainControls.start("start")
       }
     },[isInView])

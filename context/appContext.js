@@ -18,7 +18,6 @@ export const useMyContext = () => {
 const reducer = (state, action) => {
     switch (action.type) {
         case 'OPEN_MODAL':
-            console.log('MODAL is open!: ', action.payload.message);
             return {
                 ...state,
                 modal_msg: action.payload.message || '',
@@ -33,7 +32,6 @@ const reducer = (state, action) => {
                 modal_error_mode: true
             }
         case 'CLOSE_MODAL':
-            console.log('modal is closed :(')
             return {
                 ...state,
                 modal_msg: '',

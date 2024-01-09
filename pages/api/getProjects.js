@@ -2,13 +2,12 @@ import connectDB from "@/db/dbSetup";
 import { validate as uuidValidate } from 'uuid';
 import Project from '../../models/projectsModel';
 import jwt from 'jsonwebtoken';
-import fs from 'fs';
 import { NextResponse } from "next/server";
 
-const publicKey = process.env.NEXT_PUBLIC_KEY
+const { PUB_KEY } = JSON.parse(process.env.NEXT_PUBLIC_PUBLIC_KEY)
 
 /**
- * Serverless function to return allmy projects
+ * Serverless function to return all my projects
  */
 
 const getProjects = async(req,res) => {
@@ -18,7 +17,7 @@ const getProjects = async(req,res) => {
             await connectDB();
             const token = req.headers.authorization.split(' ')[1];
             // decode
-            const decode = jwt.verify(token, publicKey, { algorithms: ['RS256'] });
+            const decode = jwt.verify(token, PUB_KEY, { algorithms: ['RS256'] });
             // validate
             const validation = uuidValidate(decode);
             if(!validation) {
