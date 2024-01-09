@@ -1,10 +1,9 @@
 import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
-import fs from 'fs';
 import { validate as uuidValidate } from 'uuid';
 
-const publicKey = fs.readFileSync('id_rsa_pub.pem','utf8');
+const { PUB_KEY } = JSON.parse(process.env.NEXT_PUBLIC_PUBLIC_KEY)
 
 /**
  * Serverless function to send an email to my inbox using Nodemailer
@@ -15,11 +14,11 @@ const sendEmail = async(req,res) => {
         try{
             const token = req.headers.authorization.split(' ')[1];
             // decode
-            const decode = jwt.verify(token, publicKey, { algorithms: ['RS256'] });
+            const decode = jwt.verify(token, PUB_KEY, { algorithms: ['RS256'] });
             // validate
             const validation = uuidValidate(decode);
-            if(validation){
-                
+            if(!validation || !decode || !token){
+                return NextResponse.json({ message: "Unauthorized" }, { status: 403 });
             }
             // send email to my inbox for new business inquiries
             const { from_name, from_email, subject, message } = req.body
