@@ -1,7 +1,9 @@
-import '@/styles/globals.css'
 import Navbar from './components/navbar';
 import { useState, useEffect, useRef} from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { MyContextProvider } from '../context/appContext';
+import Modal from './components/modal';
+import '@/styles/globals.css';
 
 
 export default function App({ Component, pageProps }) {
@@ -39,12 +41,15 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <Navbar isScrolling={ui_state.user_scroll} />
-      <div ref={outletRef} className="w-full h-[100%] overflow-y-auto flex-grow">
-        <AnimatePresence mode='wait' initial={false}>
-          <Component key={pageProps.uniqueKey} {...pageProps} />
-        </AnimatePresence>
-      </div>
+      <MyContextProvider>
+        <Modal />
+        <Navbar isScrolling={ui_state.user_scroll} />
+        <div ref={outletRef} className="w-full h-[100%] overflow-y-auto flex-grow">
+          <AnimatePresence mode='wait' initial={false}>
+            <Component key={pageProps.uniqueKey} {...pageProps} />
+          </AnimatePresence>
+        </div>
+      </MyContextProvider>
     </>
   ) 
 }

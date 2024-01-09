@@ -20,7 +20,7 @@ export default function Home() {
         {/* Welcome message */}
         <div className="w-full h-[50%] p-3 flex flex-col justify-center md:items-center lg:relative">
           <div className="flex flex-col w-[100%] md:w-[65%] lg:w-[40%] lg:absolute lg:left-[15%] lg:top-[5%] text-[#36456F]">
-            <h2 className="text-5xl lg:text-6xl my-8 font-bold">Welcome to my portfolio.</h2>
+            <h2 className="text-5xl lg:text-6xl my-8 font-bold">Welcome to my website.</h2>
             <p className="w-[86%] text-2xl lg:text-4xl lg:w-[84%] font-light">
               Hi, my name is Anthony Charette.
               I am a full-stack developer & designer.

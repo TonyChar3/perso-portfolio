@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 const connectDB = async () => {
     try {
         // connect to mongodb using the string and mongoose
-        const connect = await mongoose.connect(process.env.DB_STRING);
+        const connect = await mongoose.connect(process.env.NEXT_PUBLIC_DB_STRING);
         console.log("DB connection", connect.connection.host, connect.connection.name);
     } catch(err){
         console.log(err);

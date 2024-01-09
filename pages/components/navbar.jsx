@@ -53,11 +53,11 @@ const Navbar = (props) => {
             </div>
             {/* Navigation menu */}
             <nav className={`absolute top-0 left-0 right-0 bg-[#F9F9F9] bg-opacity-[93%] w-full h-full flex flex-col justify-center transform-all ease duration-700 z-[20]
-            lg:flex-row lg:justify-end lg:h-auto lg:bg-transparent
+            lg:flex-row lg:justify-end lg:h-auto lg:bg-transparent lg:m-3
             ${open_mobile_nav? "-translate-x-0 z-[20]" : "-translate-x-[200%] lg:-translate-x-0"}`}>
                 <div className={`flex flex-col w-80 h-[85%] p-6 text-[#36456F] transform-all ease duration-300
-                lg:flex-row lg:w-[55%] lg:h-auto lg:items-center
-                ${user_isScroll? "lg:bg-[#F9F9F9] lg:bg-opacity-[80%] rounded-full m-2" : ""}`}>
+                lg:p-2  lg:flex-row lg:w-[55%] lg:h-auto lg:items-center
+                ${user_isScroll? "lg:bg-[#F9F9F9] lg:bg-opacity-[85%] rounded-full m-2" : ""}`}>
                     {/* Welcome page button */}
                     <div className={`w-[56%] transform-all ease duration-300
                     md:mx-2
