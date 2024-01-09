@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
-import { fetchProjects } from '@/lib/projectPage';
+import { fetchProjects } from '@/lib/projectFunctions';
 
 const initialState = {
     modal_msg: '',

@@ -5,7 +5,6 @@ import { MyContextProvider } from '../context/appContext';
 import Modal from './components/modal';
 import '@/styles/globals.css';
 
-
 export default function App({ Component, pageProps }) {
   const [ui_state, setUIstate] = useState({
     open_mobile_nav: false,
@@ -44,7 +43,7 @@ export default function App({ Component, pageProps }) {
       <MyContextProvider>
         <Modal />
         <Navbar isScrolling={ui_state.user_scroll} />
-        <div ref={outletRef} className="w-full h-[100%] overflow-y-auto flex-grow">
+        <div ref={outletRef} className="w-full h-[100%] fixed overflow-y-auto overflow-x-hidden flex-grow">
           <AnimatePresence mode='wait' initial={false}>
             <Component key={pageProps.uniqueKey} {...pageProps} />
           </AnimatePresence>

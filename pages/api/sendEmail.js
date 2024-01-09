@@ -6,6 +6,10 @@ import { validate as uuidValidate } from 'uuid';
 
 const publicKey = fs.readFileSync('id_rsa_pub.pem','utf8');
 
+/**
+ * Serverless function to send an email to my inbox using Nodemailer
+ */
+
 const sendEmail = async(req,res) => {
     if(req.method === 'POST'){
         try{

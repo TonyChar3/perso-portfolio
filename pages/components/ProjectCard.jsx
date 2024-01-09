@@ -19,6 +19,7 @@ const ProjectCard = ({ active_details, mobile_open_stack, toggleDetails, toggleS
                         }
                     }
                 `}</style>
+                
                 <div className={`relative h-[35em] w-[80%] my-6 md:h-[33em] md:w-[60%] lg:w-[70%] 2xl:w-[60%] flex flex-col justify-center items-center rounded-3xl shadow-[#00000066] shadow-2xl z-[1] lg:hover:scale-[1.03] transition-all ease duration-300 
                 bg-cover
                 bg-center 

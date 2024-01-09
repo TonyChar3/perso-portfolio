@@ -51,6 +51,7 @@ const Navbar = (props) => {
                     }`}
                 />
             </div>
+            
             {/* Navigation menu */}
             <nav className={`absolute top-0 left-0 right-0 bg-[#F9F9F9] bg-opacity-[93%] w-full h-full flex flex-col justify-center transform-all ease duration-700 z-[20]
             lg:flex-row lg:justify-end lg:h-auto lg:bg-transparent lg:m-3
@@ -62,9 +63,9 @@ const Navbar = (props) => {
                     <div className={`w-[56%] transform-all ease duration-300
                     md:mx-2
                     lg:mx-4 lg:flex lg:flex-row lg:justify-center lg:items-center
-                    ${active_path === '/#welcome'?  "lg:h-[20%] lg:py-5 p-2 text-center rounded-2xl bg-[#FFFFFF] shadow-[rgba(0, 0, 0, 0.25)] shadow-md relative" : "my-4 md:my-6 lg:my-4 lg:h-0"}`}>
+                    ${active_path === '/#welcome' || active_path === '/' && router.pathname === '/'?  "lg:h-[20%] lg:py-5 p-2 text-center rounded-2xl bg-[#FFFFFF] shadow-[rgba(0, 0, 0, 0.25)] shadow-md relative" : "my-4 md:my-6 lg:my-4 lg:h-0"}`}>
                         <Link href="/#welcome" onClick={() => setMobileNav(open_mobile_nav => !open_mobile_nav)} className={`text-3xl font-light`}>Welcome</Link>
-                        <div className={`${active_path === '/#welcome'? "absolute top-[45%] right-[-20%] lg:top-[110%] lg:right-[50%] w-[10px] h-[10px] bg-[#36456F] rounded-full" : "hidden"}`}></div>
+                        <div className={`${active_path === '/#welcome' || active_path === '/' && router.pathname === '/'? "absolute top-[45%] right-[-20%] lg:top-[110%] lg:right-[50%] w-[10px] h-[10px] bg-[#36456F] rounded-full" : "hidden"}`}></div>
                     </div>
 
                     {/* About section button */}
@@ -94,7 +95,9 @@ const Navbar = (props) => {
                         <div className={`${active_path === '/projects#contact-me'? "absolute top-[45%] right-[-20%] lg:top-[110%] lg:right-[50%] w-[10px] h-[10px] bg-[#36456F] rounded-full" : "hidden"}`}></div>
                     </div>
 
-                    <div className="lg:hidden flex flex-row justify-around items-center w-[85%] mt-8">
+                    <div className="lg:hidden flex flex-row justify-around items-center w-full mt-8">
+                        <i aria-hidden className="fa-brands fa-x-twitter text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>
+                        <div className="bg-[#36456F] w-[2.5px] h-[35px] mx-2 rounded-lg transform rotate-[30deg]"></div>
                         <i aria-hidden className="fa-brands fa-instagram text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>
                         <div className="bg-[#36456F] w-[2.5px] h-[35px] mx-2 rounded-lg transform rotate-[30deg]"></div>
                         <i aria-hidden className="fa-brands fa-linkedin text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>

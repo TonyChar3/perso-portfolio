@@ -7,9 +7,14 @@ import { NextResponse } from "next/server";
 
 const publicKey = fs.readFileSync('id_rsa_pub.pem','utf8');
 
+/**
+ * Serverless function to return allmy projects
+ */
+
 const getProjects = async(req,res) => {
     if (req.method === 'GET') {
         try{
+            // connect to the database
             await connectDB();
             const token = req.headers.authorization.split(' ')[1];
             // decode

@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
-import { sendNewEmail } from '@/lib/projectPage';
+import { sendNewEmail } from '@/lib/projectFunctions';
 import ProjectCard from './components/ProjectCard';
 import { useState, useEffect } from 'react';
 import { sanitizeInputValue } from '@/lib/security';
 import { useMyContext } from '../context/appContext';
 import LoadingSpinner from './components/LoadingSpinner';
+import RevealAnimation from './components/scroll_animate/RevealAnimate';
 
 const projects = () => {
 
@@ -98,7 +99,6 @@ const projects = () => {
 
     useEffect(() => {
         if(state.project_list.length > 0){
-            console.log(state.data_loading)
             dispatch({ type: 'DATA_LOADING', payload: { isLoading: false } });
         }
     },[state.project_list])
@@ -117,12 +117,10 @@ const projects = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="471" height="483" viewBox="0 0 471 483" fill="none" className="hidden md:block absolute top-[-11.5%] left-0">
                     <path d="M470 0C470 266.201 259.574 482 0 482" stroke="#36456F" strokeWidth="2"/>
                 </svg>
-                <div className="w-full flex flex-col items-center"> 
+                <RevealAnimation className="w-full flex flex-col items-center"> 
                     {
                         state.data_loading?
-                        <>
-                            <LoadingSpinner />
-                        </>
+                        <LoadingSpinner />
                         :
                         Array.isArray(state.project_list) && state.project_list.length ?
                         state.project_list.map((project, key) => (
@@ -144,7 +142,7 @@ const projects = () => {
                             </div>
                         </>
                     }
-                </div> 
+                </RevealAnimation> 
                 <svg xmlns="http://www.w3.org/2000/svg" width="529" height="927" viewBox="0 0 529 927" fill="none" className="hidden md:block absolute bottom-0 right-0 z-[0]">
                     <path d="M531.5 926C238.513 926 1 718.932 1 463.5C1 208.068 238.513 1 531.5 1" stroke="#36456F" strokeWidth="2"/>
                 </svg>
@@ -158,11 +156,14 @@ const projects = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, transition: { duration: 0.1 } }}
             >
-                <div className="absolute w-[100%] top-[13%] lg:top-[16%] left-auto right-auto text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="242" height="250" viewBox="0 0 242 307" fill="none" className="hidden lg:block absolute top-0 left-[-2%]">
+                    <path d="M156.783 0.999955C235.244 44.5706 263.527 143.496 219.956 221.956C176.386 300.416 77.4601 328.7 -1 285.129" stroke="white" strokeWidth="2"/>
+                </svg>
+                <RevealAnimation className="absolute w-[100%] top-[13%] lg:top-[16%] left-auto right-auto text-center">
                     <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold">- Let's work together -</h3>
-                </div>
+                </RevealAnimation>
                 <form onSubmit={(e) => sendEmailHandler(e)} className="absolute w-full md:w-[70%] md:h-[60%] lg:w-[50%] lg:top-[25%] lg:left-[10%] lg:h-[70%] top-[22%] h-[62%] flex flex-col items-center justify-center z-[1]">
-                    <div className="w-full p-3 m-1 md:m-2 flex justify-center items-center">
+                    <RevealAnimation className="w-full p-3 m-1 md:m-2 flex justify-center items-center">
                         <input 
                         type="text" 
                         name="user_name" 
@@ -174,8 +175,8 @@ const projects = () => {
                         className={`p-4 lg:p-5 w-[90%] bg-[#ffffff] bg-opacity-[30%] focus:bg-opacity-[53%] text-black placeholder:text-[#36456F] md:placeholder:text-lg lg:placeholder:text-xl placeholder:font-light outline-none focus:border-[1px] focus:border-white 
                         ${state.modal_error_mode? "border-[1px] border-red-500" : ""}
                         ${submit_button_state? "bg-opacity-[70%]" : ""}`} />
-                    </div>
-                    <div className="w-full p-3 m-1 md:m-2 flex justify-center items-center">
+                    </RevealAnimation>
+                    <RevealAnimation className="w-full p-3 m-1 md:m-2 flex justify-center items-center">
                         <input 
                         type="email" 
                         name="user_email" 
@@ -187,8 +188,8 @@ const projects = () => {
                         className={`p-4 lg:p-5 w-[90%] bg-[#ffffff] bg-opacity-[30%] focus:bg-opacity-[53%] text-black placeholder:text-[#36456F] md:placeholder:text-lg lg:placeholder:text-xl placeholder:font-light outline-none focus:border-[1px] focus:border-white 
                         ${state.modal_error_mode? "border-[1px] border-red-500" : ""}
                         ${submit_button_state? "bg-opacity-[70%]" : ""}`}/>
-                    </div>
-                    <div className="w-full p-3 m-1 md:m-2 flex justify-center items-center">
+                    </RevealAnimation>
+                    <RevealAnimation className="w-full p-3 m-1 md:m-2 flex justify-center items-center">
                         <input 
                         type="text" 
                         name="user_subject" 
@@ -200,19 +201,21 @@ const projects = () => {
                         className={`p-4 lg:p-5 w-[90%] bg-[#ffffff] bg-opacity-[30%] focus:bg-opacity-[53%] text-black placeholder:text-[#36456F] md:placeholder:text-lg lg:placeholder:text-xl placeholder:font-light outline-none focus:border-[1px] focus:border-white 
                         ${state.modal_error_mode? "border-[1px] border-red-500" : ""}
                         ${submit_button_state? "bg-opacity-[70%]" : ""}`}/>
-                    </div>
-                    <textarea 
-                    name="message" 
-                    id="message_input" 
-                    placeholder="Your message..." 
-                    disabled={submit_button_state}  
-                    value={email_message} 
-                    onChange={(e) => setEmailMessage(e.target.value)} 
-                    className={`resize-none w-[90%] h-[50%] p-3 my-2 lg:my-4 overflow-y-auto text-black bg-[#ffffff] bg-opacity-[30%] focus:bg-opacity-[53%] placeholder:text-[#36456F] md:placeholder:text-lg lg:placeholder:text-xl placeholder:font-light outline-none focus:border-[1px] focus:border-white 
-                    ${state.modal_error_mode? "border-[1px] border-red-500" : ""}
-                    ${submit_button_state? "bg-opacity-[70%]" : ""}`}></textarea>
+                    </RevealAnimation>
+                    <RevealAnimation className="w-full h-[50%] my-2 lg:my-4 flex justify-center items-center lg:justify-start">
+                        <textarea 
+                        name="message" 
+                        id="message_input" 
+                        placeholder="Your message..." 
+                        disabled={submit_button_state}  
+                        value={email_message} 
+                        onChange={(e) => setEmailMessage(e.target.value)} 
+                        className={`resize-none w-[90%] h-full p-3 overflow-y-auto text-black bg-[#ffffff] bg-opacity-[30%] focus:bg-opacity-[53%] placeholder:text-[#36456F] md:placeholder:text-lg lg:placeholder:text-xl placeholder:font-light outline-none focus:border-[1px] focus:border-white 
+                        ${state.modal_error_mode? "border-[1px] border-red-500" : ""}
+                        ${submit_button_state? "bg-opacity-[70%]" : ""}`}></textarea>
+                    </RevealAnimation>
 
-                    <div className="w-full p-2">
+                    <RevealAnimation className="w-full p-2">
                         <div className={`relative ml-8 w-[45%] h-[2.5em] md:w-[30%] lg:w-[32%] transform -skew-x-[35deg] lg:text-xl font-regular py-4 px-4 active:scale-[0.90] transition ease duration-100 ${submit_button_state? "bg-gray-300 text-white" : "bg-white text-[#36456F]"} `}>
                             <button type="submit" disabled={submit_button_state} className={`w-full h-full absolute top-0 left-0 skew-x-[35deg] active:scale-[0.90] transform-all ease duration-100`}>
                                 {
@@ -223,23 +226,24 @@ const projects = () => {
                                 }
                             </button>
                         </div>
-                    </div>
+                    </RevealAnimation>
                 </form>
-                <div id="contact-me" className="absolute bottom-[11%] left-[36%] md:left-[33%] md:bottom-[13%] lg:bottom-[5%] lg:left-[25%] h-[10%] w-[18.5%] md:w-[15%] lg:w-[10%] lg:h-[17%] bg-[#1E3050] rounded-full z-[0]"></div>{/* Bg circle */}
-                <div className="w-full flex flex-row items-center justify-center lg:justify-end p-2">
+                <div id="contact-me" className="absolute bottom-[11%] left-[36%] md:left-[33%] md:bottom-[13%] lg:bottom-[1%] lg:left-[25%] h-[10%] w-[18.5%] md:w-[15%] lg:w-[9%] lg:h-[17%] bg-[#1E3050] rounded-full z-[0]"></div>{/* Bg circle */}
+                <RevealAnimation className="w-full flex flex-row items-center justify-center lg:justify-end p-4">
                     <div className="text-xs text-right">
                         <p>powered by TonyChar3</p>
                         <p>All rights reserved</p>
                     </div>
                     <div className="w-[5px] h-[80%] bg-white mx-2 rounded-lg"></div>
-                    <div className="w-[30%] md:w-[16%] lg:w-[20%] flex flex-row justify-around items-center">
+                    <div className="w-[42%] md:w-[16%] lg:w-[15%] flex flex-row justify-around items-center">
+                        <i aria-hidden className="fa-brands fa-x-twitter text-lg md:text-2xl mx-1"></i>
                         <i aria-hidden className="fa-brands fa-instagram text-2xl mx-1"></i>
                         <i aria-hidden className="fa-brands fa-linkedin text-2xl mx-1"></i>
                         <i aria-hidden className="fa-brands fa-github text-2xl mx-1"></i>
                     </div>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="500" height="825" viewBox="0 0 533 879" fill="none" className="hidden absolute right-[0%] z-[0] lg:block">
-                    <path d="M533 879C240.013 879 1 718.932 1 463.5C1 208.068 238.513 1 531.5 1" stroke="white" strokeWidth="2"/>
+                </RevealAnimation>
+                <svg xmlns="http://www.w3.org/2000/svg" width="437" height="632" viewBox="0 0 437 632" fill="none" className="hidden lg:block absolute right-0">
+                    <path d="M215.557 631.839C46.8025 570.687 -40.4267 384.311 20.725 215.557C81.8768 46.8025 268.253 -40.4267 437.007 20.725" stroke="white" strokeWidth="2"/>
                 </svg>
             </motion.footer>
         </>
