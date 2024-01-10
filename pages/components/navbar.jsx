@@ -96,13 +96,13 @@ const Navbar = (props) => {
                     </div>
 
                     <div className="lg:hidden flex flex-row justify-around items-center w-full mt-8">
-                        <i aria-hidden className="fa-brands fa-x-twitter text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>
+                        <Link href="https://twitter.com/tonyc6731" target="_blank">< i aria-hidden className="fa-brands fa-x-twitter text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i></Link>
                         <div className="bg-[#36456F] w-[2.5px] h-[35px] mx-2 rounded-lg transform rotate-[30deg]"></div>
-                        <i aria-hidden className="fa-brands fa-instagram text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>
+                        <Link href="https://www.instagram.com/tonydev.io/" target="_blank"><i aria-hidden className="fa-brands fa-instagram text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i></Link>
                         <div className="bg-[#36456F] w-[2.5px] h-[35px] mx-2 rounded-lg transform rotate-[30deg]"></div>
-                        <i aria-hidden className="fa-brands fa-linkedin text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>
+                        <Link href="www.linkedin.com/in/anthony-charette-3b2655252" target="_blank"><i aria-hidden className="fa-brands fa-linkedin text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i></Link>
                         <div className="bg-[#36456F] w-[2.5px] h-[35px] mx-2 rounded-lg transform rotate-[30deg]"></div>
-                        <i aria-hidden className="fa-brands fa-github text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i>
+                        <Link href="https://github.com/TonyChar3" target="_blank"><i aria-hidden className="fa-brands fa-github text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"></i></Link>
                     </div>
                 </div>
             </nav>
