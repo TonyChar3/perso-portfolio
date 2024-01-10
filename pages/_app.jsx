@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { MyContextProvider } from '../context/appContext';
 import Modal from './components/modal';
 import '@/styles/globals.css';
+import Head from 'next/head';
 
 export default function App({ Component, pageProps }) {
   const [ui_state, setUIstate] = useState({
@@ -40,6 +41,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        <title>tonydev.io</title>
+      </Head>
       <MyContextProvider>
         <Modal />
         <Navbar isScrolling={ui_state.user_scroll} />
