@@ -43,6 +43,10 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <title>tonydev.io</title>
+        <meta name="author" content='Anthony "Tony" Charette' />
+        <meta name="description" content="This is tonydev.io official personnal website/portfolio. 
+        It showcases some projects to showcase my skills. I am open for freelance work aswell! 
+        Reach out to me via the contact form on my website!" />
       </Head>
       <MyContextProvider>
         <Modal />
