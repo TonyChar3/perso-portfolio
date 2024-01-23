@@ -130,8 +130,8 @@ export default function Home() {
               </div>
               <div className="my-4 lg:my-6">
                 I am dedicated to turning ideas into functional, user-friendly
-                solutions and this website is to showcase how good I am at doing
-                it!
+                solutions, and this website is designed to showcase my
+                proficiency in doing so!
               </div>
             </div>
           </div>
