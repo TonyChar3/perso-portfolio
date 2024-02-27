@@ -273,7 +273,7 @@ export default function Home() {
                   className="fa-brands fa-x-twitter text-lg md:text-2xl"
                 ></i>
               </Link>
-              <Link href="https://www.instagram.com/tonydev.io" target="_blank">
+              <Link href="#" target="_blank">
                 <i aria-hidden className="fa-brands fa-instagram text-2xl"></i>
               </Link>
               <Link
