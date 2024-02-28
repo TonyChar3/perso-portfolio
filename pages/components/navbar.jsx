@@ -203,7 +203,7 @@ const Navbar = (props) => {
               ></i>
             </Link>
             <div className="bg-[#36456F] w-[2.5px] h-[35px] mx-2 rounded-lg transform rotate-[30deg]"></div>
-            <Link href="#" target="_blank">
+            <Link href="#">
               <i
                 aria-hidden
                 className="fa-brands fa-instagram text-5xl text-[#36456F] active:scale-[0.90] transform-all ease duration-100"

@@ -67,7 +67,7 @@ export default function Home() {
           </Link>
           <div className="bg-[#36456F] w-[2.5px] h-[35px] mx-2 rounded-lg transform rotate-[90deg]"></div>
           {/* Divider line */}
-          <Link href="#" target="_blank">
+          <Link href="#">
             <i
               aria-hidden
               className="fa-brands fa-instagram text-5xl text-[#36456F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100"
@@ -273,7 +273,7 @@ export default function Home() {
                   className="fa-brands fa-x-twitter text-lg md:text-2xl"
                 ></i>
               </Link>
-              <Link href="#" target="_blank">
+              <Link href="#">
                 <i aria-hidden className="fa-brands fa-instagram text-2xl"></i>
               </Link>
               <Link
