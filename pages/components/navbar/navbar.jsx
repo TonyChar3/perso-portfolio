@@ -10,7 +10,6 @@ const Navbar = (props) => {
   const { state, dispatch } = useMyContext();
   const [open_mobile_nav, setMobileNav] = useState(false);
   const [user_isScroll, setUserScroll] = useState(null);
-  const [active_section, setActiveSection] = useState(null);
 
   const router = useRouter();
 
@@ -26,10 +25,6 @@ const Navbar = (props) => {
       });
     }
   }, [props.isScrolling]);
-
-  useEffect(() => {
-    setActiveSection(props.activeSection);
-  }, [props.activeSection]);
 
   return (
     <>
@@ -72,7 +67,6 @@ const Navbar = (props) => {
             link="/#about-me"
             setMobileNav={setMobileNav}
             open_mobile_nav={open_mobile_nav}
-            active_section={active_section}
             user_scroll={user_isScroll}
           />
 
@@ -82,7 +76,6 @@ const Navbar = (props) => {
             link="/#projects"
             setMobileNav={setMobileNav}
             open_mobile_nav={open_mobile_nav}
-            active_section={active_section}
             user_scroll={user_isScroll}
           />
 
@@ -92,7 +85,6 @@ const Navbar = (props) => {
             link="/#contact-me"
             setMobileNav={setMobileNav}
             open_mobile_nav={open_mobile_nav}
-            active_section={active_section}
             user_scroll={user_isScroll}
           />
         </div>

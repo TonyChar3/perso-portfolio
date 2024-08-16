@@ -2,7 +2,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
-const NavBarButton = ({ title, link, setMobileNav, user_scroll }) => {
+const NavBarButton = ({
+  title,
+  link,
+  setMobileNav,
+  open_mobile_nav,
+  user_scroll,
+}) => {
   const router = useRouter();
 
   const [active_path, setActivePath] = useState(router.pathname);
@@ -32,7 +38,6 @@ const NavBarButton = ({ title, link, setMobileNav, user_scroll }) => {
             user_scroll ? "lg:bg-[#252525] lg:bg-opacity-95" : ""
           } transform-all ease duration-300`}
         >
-          {/* lg:bg-[#F9F9F9] */}
           <Link
             href={link}
             onClick={() => setMobileNav((open_mobile_nav) => !open_mobile_nav)}
