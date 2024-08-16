@@ -11,7 +11,7 @@ export default function Document() {
         />
         <script
           src="https://kit.fontawesome.com/76351f6769.js"
-          crossOrigin="anonymous"
+          crossorigin="anonymous"
         ></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

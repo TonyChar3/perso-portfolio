@@ -1,12 +1,15 @@
-import Navbar from "./components/navbar";
+import Navbar from "./components/navbar/navbar";
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import { MyContextProvider } from "../context/appContext";
+import { useMyContext } from "../context/appContext";
 import Modal from "./components/modal";
 import "@/styles/globals.css";
 import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
   const [ui_state, setUIstate] = useState({
     open_mobile_nav: false,
     user_scroll: false,
@@ -15,12 +18,17 @@ export default function App({ Component, pageProps }) {
   const outletRef = useRef(null);
 
   const handleScroll = () => {
+    // get if on of the div is visible
     if (outletRef.current.scrollTop > 0) {
       setUIstate((prevValue) => ({
         ...prevValue,
         user_scroll: true,
       }));
     } else {
+      if (router.pathname !== "/projectDetail") {
+        router.push(`/`, undefined, { shallow: true });
+      }
+
       setUIstate((prevValue) => ({
         ...prevValue,
         user_scroll: false,
@@ -37,7 +45,7 @@ export default function App({ Component, pageProps }) {
         }
       };
     }
-  }, [outletRef]);
+  }, [outletRef, router]);
 
   return (
     <>
@@ -46,14 +54,15 @@ export default function App({ Component, pageProps }) {
         <meta name="author" content='Anthony "Tony" Charette' />
         <meta
           name="description"
-          content="This is tonydev.io, the official personal website/portfolio. 
-          It showcases several projects to demonstrate my skills. 
-          I am also open to freelance work! Feel free to reach out to me via the contact form on my website."
+          content="Anthony Charette personal portfolio. See what im capable of and feel free to contact for any questions!"
         />
       </Head>
       <MyContextProvider>
         <Modal />
-        <Navbar isScrolling={ui_state.user_scroll} />
+        <Navbar
+          isScrolling={ui_state.user_scroll}
+          activeSection={ui_state.visible_div}
+        />
         <div
           ref={outletRef}
           className="w-full h-[100%] fixed overflow-y-auto overflow-x-hidden flex-grow"
