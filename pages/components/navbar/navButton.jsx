@@ -3,11 +3,11 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
 const NavBarButton = ({
-  title,
-  link,
-  setMobileNav,
-  open_mobile_nav,
-  user_scroll,
+  title = "",
+  link = "",
+  setMobileNav = null,
+  open_mobile_nav = false,
+  user_scroll = false,
 }) => {
   const router = useRouter();
 

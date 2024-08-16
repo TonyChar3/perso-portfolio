@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const ProjectDetailButton = ({ title, link }) => {
+const ProjectDetailButton = ({ title = "", link = "" }) => {
   return (
     <>
       <Link
