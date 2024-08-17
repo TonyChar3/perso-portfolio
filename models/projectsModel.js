@@ -1,52 +1,52 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const projectImgObj = mongoose.Schema({
-    screen_type: {
-        type: String
-    },
-    url: {
-        type: String
-    }
+  url: {
+    type: String,
+  },
 });
 
 const stackIconObj = mongoose.Schema({
-    name: {
-        type: String
-    },
-    url: {
-        type: String
-    }
+  name: {
+    type: String,
+  },
+  url: {
+    type: String,
+  },
 });
 
-const projectSchema = mongoose.Schema({
+const projectSchema = mongoose.Schema(
+  {
     projectName: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     projectUrl: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     imgUrl: {
-        type: [projectImgObj],
-        default: []
+      type: [projectImgObj],
+      default: [],
     },
     description: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     stack: {
-        type: [stackIconObj],
-        default: []
+      type: [stackIconObj],
+      default: [],
     },
     repoUrl: {
-        type: String,
-        required: true
-    }
-},
-{
-    timestamps: true
-});
+      type: String,
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const Project = mongoose.models.Project || mongoose.model("Project", projectSchema)
+const Project =
+  mongoose.models.Project || mongoose.model("Project", projectSchema);
 export default Project;

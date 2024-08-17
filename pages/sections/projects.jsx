@@ -3,7 +3,6 @@ import ProjectCard from "../components/project/projectCard";
 import LoadingSpinner from "../components/LoadingSpinner";
 
 const ProjectsSection = ({ loading, project_list }) => {
-  project_list = [];
   return (
     <>
       <div id="projects"></div>

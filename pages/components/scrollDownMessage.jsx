@@ -3,7 +3,8 @@ const ScrollDownMessage = ({ show, message, hidden = "" }) => {
     <>
       {/* Scroll down message */}
       <div
-        className={`h-[7%] absolute bottom-0 ${show ? "opacity-0" : ""}
+        className={`h-[7%] absolute bottom-0 
+        ${show ? "opacity-0" : ""}
         ${hidden}
          transition-all ease duration-300`}
       >
@@ -11,7 +12,7 @@ const ScrollDownMessage = ({ show, message, hidden = "" }) => {
           {message}
         </p>
         <p className="text-center text-sm font-light animate-pulse text-white">
-          <i class="fa-light fa-caret-down mx-auto"></i>
+          <i aria-hidden className="fa-light fa-caret-down mx-auto"></i>
         </p>
       </div>
     </>
