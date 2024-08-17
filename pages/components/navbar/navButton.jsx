@@ -12,12 +12,25 @@ const NavBarButton = ({
   const router = useRouter();
 
   const [active_path, setActivePath] = useState(router.pathname);
+  const [active_style, setActiveStyle] = useState(false);
 
   useEffect(() => {
     if (router) {
       setActivePath(router.asPath);
     }
   }, [router]);
+
+  useEffect(() => {
+    if (active_path === link) {
+      setActiveStyle(true);
+    }
+  }, [active_path]);
+
+  useEffect(() => {
+    if (user_scroll == false) {
+      setActiveStyle(false);
+    }
+  }, [user_scroll]);
 
   return (
     <>
@@ -42,7 +55,11 @@ const NavBarButton = ({
             href={link}
             onClick={() => setMobileNav((open_mobile_nav) => !open_mobile_nav)}
             className={`text-3xl md:text-4xl lg:text-3xl text-white
-            ${active_path === link ? "font-medium" : "font-light"}
+            ${
+              active_path === link && active_style
+                ? "font-medium"
+                : "font-light"
+            }
             `}
           >
             {title}

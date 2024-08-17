@@ -25,10 +25,6 @@ export default function App({ Component, pageProps }) {
         user_scroll: true,
       }));
     } else {
-      if (router.pathname !== "/projectDetail") {
-        router.push(`/`, undefined, { shallow: true });
-      }
-
       setUIstate((prevValue) => ({
         ...prevValue,
         user_scroll: false,
