@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
 export function middleware(request) {
-  const hiddenRouteOne = process.env.NEXT_PUBLIC_HIDDEN_ROUTE_ONE;
-  const hiddenRouteTwo = process.env.NEXT_PUBLIC_HIDDEN_ROUTE_TWO;
+  const hiddenRouteOne = process.env.HIDDEN_ROUTE_ONE;
+  const hiddenRouteTwo = process.env.HIDDEN_ROUTE_TWO;
 
   const isProduction = process.env.NEXT_PUBLIC_NODE_ENV === "production";
 

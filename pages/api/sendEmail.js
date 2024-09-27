@@ -1,4 +1,3 @@
-import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 import { validate as uuidValidate } from "uuid";
@@ -7,7 +6,7 @@ import { EmailTemplate } from "../components/email/email_template";
 const { PUB_KEY } = JSON.parse(process.env.NEXT_PUBLIC_PUBLIC_KEY);
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.NEXT_PUBLIC_EMAIL_API_KEY);
+const resend = new Resend(process.env.EMAIL_API_KEY);
 
 /**
  * Serverless function to send an email to my inbox using Nodemailer

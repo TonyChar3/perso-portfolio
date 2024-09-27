@@ -4,7 +4,7 @@ import Project from "../../models/projectsModel";
 import jwt from "jsonwebtoken";
 import { NextResponse } from "next/server";
 
-const { PUB_KEY } = JSON.parse(process.env.NEXT_PUBLIC_PUBLIC_KEY);
+const { PUB_KEY } = JSON.parse(process.env.PUBLIC_KEY);
 
 /**
  * Serverless function to return all my projects
@@ -26,7 +26,6 @@ const getProjects = async (req, res) => {
       const projects_array = await Project.find();
       res.status(200).send(projects_array);
     } catch (err) {
-      console.log(err);
       return NextResponse.json(
         { message: "ERROR fetching projects" },
         { status: 500 }
