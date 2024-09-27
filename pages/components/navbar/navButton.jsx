@@ -40,7 +40,7 @@ const NavBarButton = ({
                     lg:mx-8
                     lg:border-none
                     ${
-                      active_path === link
+                      active_path === link && active_style
                         ? "border-b-4 border-[#F7DC6F]"
                         : "border-b border-white"
                     }

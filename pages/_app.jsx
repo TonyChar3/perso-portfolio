@@ -3,8 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import { MyContextProvider } from "../context/appContext";
-import { useMyContext } from "../context/appContext";
-import Modal from "./components/modal";
 import "@/styles/globals.css";
 import Head from "next/head";
 
@@ -54,7 +52,6 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <MyContextProvider>
-        <Modal />
         <Navbar
           isScrolling={ui_state.user_scroll}
           activeSection={ui_state.visible_div}

@@ -5,6 +5,9 @@ import { sanitizeFieldsValue } from "@/lib/security";
 import { useMyContext } from "@/context/appContext";
 import RevealAnimation from "../components/scroll_animate/RevealAnimate";
 import Link from "next/link";
+import StatusMessage from "../components/contact_form/contactFormStatusMessage";
+import FormInput from "../components/contact_form/formInput";
+import FormTextArea from "../components/contact_form/formTextArea";
 
 const ContactForm = () => {
   const { state, dispatch } = useMyContext();
@@ -40,21 +43,6 @@ const ContactForm = () => {
       setButtonState(false);
       return;
     } else {
-      // if everything is filled
-      if (
-        sessionStorage.getItem("email-sent") &&
-        sessionStorage.getItem("email-sent") === "true"
-      ) {
-        setButtonState(false);
-        resetFields();
-        dispatch({
-          type: "OPEN_MODAL",
-          payload: {
-            message: "Email already sent, please check your inbox or spam",
-          },
-        });
-        return;
-      }
       // sanitize every input values
       const sanitized_values = sanitizeFieldsValue(
         client_email,
@@ -72,8 +60,6 @@ const ContactForm = () => {
       // set loading state of the button and fields
       if (sending) {
         setButtonState(false);
-        // block the button, set new button state
-        sessionStorage.setItem("email-sent", true);
         // notify the user
         dispatch({
           type: "OPEN_MODAL",
@@ -109,7 +95,7 @@ const ContactForm = () => {
                 <p className="text-xl underline font-light">
                   tonyc6731@gmail.com
                 </p>
-                <i className="fa-light fa-envelope text-2xl"></i>
+                <i aria-hidden className="fa-light fa-envelope text-2xl"></i>
               </div>
             </div>
 
@@ -162,89 +148,47 @@ const ContactForm = () => {
             className="w-full md:w-[70%] md:h-[90%] lg:w-[50%] lg:h-[90%] 2xl:w-[40%] h-[62%] flex flex-col items-center justify-center"
           >
             {/* Name */}
-            <RevealAnimation className="w-full p-3 m-1 md:m-4 flex justify-center items-center">
-              <input
-                type="text"
-                name="user_name"
-                autoComplete="true"
-                placeholder="Your name"
-                disabled={submit_button_state}
-                value={client_name}
-                onChange={(e) => setClientName(e.target.value)}
-                className={`p-4 lg:p-5 w-[90%] bg-transparent border focus:bg-white focus:bg-opacity-[53%] text-black placeholder:text-white md:placeholder:text-lg lg:placeholder:text-xl placeholder:font-medium outline-none
-                          ${
-                            state.modal_error_mode
-                              ? "border-red-500"
-                              : "border-white"
-                          }
-                          ${submit_button_state ? "bg-opacity-[70%]" : ""}`}
-              />
-            </RevealAnimation>
+            <FormInput
+              name="user_name"
+              placeholder={"full name"}
+              input_value={client_name}
+              on_change={setClientName}
+              submit_button_state={submit_button_state}
+            />
 
             {/* Email */}
-            <RevealAnimation className="w-full p-3 m-1 md:m-4 flex justify-center items-center">
-              <input
-                type="email"
-                name="user_email"
-                autoComplete="true"
-                placeholder="Your email"
-                disabled={submit_button_state}
-                value={client_email}
-                onChange={(e) => setClientEmail(e.target.value)}
-                className={`p-4 lg:p-5 w-[90%] bg-transparent border focus:bg-white focus:bg-opacity-[53%] border focus:bg-opacity-[53%] text-black placeholder:text-white md:placeholder:text-lg lg:placeholder:text-xl placeholder:font-medium outline-none
-                          ${
-                            state.modal_error_mode
-                              ? "border-red-500"
-                              : "border-white"
-                          }
-                          ${submit_button_state ? "bg-opacity-[70%]" : ""}`}
-              />
-            </RevealAnimation>
+            <FormInput
+              name="user_email"
+              placeholder={"your@emailAddress.com"}
+              input_value={client_email}
+              on_change={setClientEmail}
+              submit_button_state={submit_button_state}
+            />
 
             {/* Subject */}
-            <RevealAnimation className="w-full p-3 m-1 md:m-4 flex justify-center items-center">
-              <input
-                type="text"
-                name="user_subject"
-                autoComplete="true"
-                placeholder="Subject"
-                disabled={submit_button_state}
-                value={email_subject}
-                onChange={(e) => setEmailSubject(e.target.value)}
-                className={`p-4 lg:p-5 w-[90%] bg-transparent border focus:bg-white focus:bg-opacity-[53%] border focus:bg-opacity-[53%] text-black placeholder:text-white md:placeholder:text-lg lg:placeholder:text-xl placeholder:font-medium outline-none 
-                          ${
-                            state.modal_error_mode
-                              ? "border-red-500"
-                              : "border-white"
-                          }
-                          ${submit_button_state ? "bg-opacity-[70%]" : ""}`}
-              />
-            </RevealAnimation>
+            <FormInput
+              name="user_subject"
+              placeholder={"subject"}
+              input_value={email_subject}
+              on_change={setEmailSubject}
+              submit_button_state={submit_button_state}
+            />
 
             {/* Message */}
-            <RevealAnimation className="w-full h-[50%] my-2 md:my-4 flex justify-center items-center lg:justify-start">
-              <textarea
-                name="message"
-                id="message_input"
-                placeholder="Your message..."
-                disabled={submit_button_state}
-                value={email_message}
-                onChange={(e) => setEmailMessage(e.target.value)}
-                className={`resize-none w-[90%] h-full p-3 overflow-y-auto border text-black bg-transparent border focus:bg-white focus:bg-opacity-[53%] placeholder:text-white md:placeholder:text-lg lg:placeholder:text-xl placeholder:font-medium outline-none focus:border-[1px] focus:border-white 
-                          ${
-                            state.modal_error_mode
-                              ? "border-red-500"
-                              : "border-white"
-                          }
-                          ${submit_button_state ? "bg-opacity-[70%]" : ""}`}
-              ></textarea>
-            </RevealAnimation>
+            <FormTextArea
+              name="message"
+              placeholder={"your message..."}
+              input_value={email_message}
+              on_change={setEmailMessage}
+              submit_button_state={submit_button_state}
+            />
 
-            <RevealAnimation className="w-full px-6 my-4">
+            <RevealAnimation className="w-full px-6 my-1">
+              <StatusMessage />
               <button
                 type="submit"
                 disabled={submit_button_state}
-                className={`w-[40%] p-2 md:p-3 md:text-2xl rounded-3xl active:scale-[0.90] transform-all ease duration-100
+                className={`w-[40%] p-2 my-4 md:p-3 md:text-2xl rounded-2xl active:scale-[0.90] transform-all ease duration-100
                 ${
                   submit_button_state
                     ? "bg-gray-300 text-white"
@@ -252,7 +196,7 @@ const ContactForm = () => {
                 } 
                 `}
               >
-                {submit_button_state ? "..." : "Send"}
+                {submit_button_state ? "..." : "Submit"}
               </button>
             </RevealAnimation>
           </form>

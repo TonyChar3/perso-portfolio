@@ -23,6 +23,15 @@ const Navbar = (props) => {
       dispatch({
         type: "USER_IS_NOT_SCROLLING",
       });
+
+      // to remove the hash in the url if the user is back on top
+      if (window.location.hash) {
+        history.replaceState(
+          "",
+          document.title,
+          window.location.pathname + window.location.search
+        );
+      }
     }
   }, [props.isScrolling]);
 
