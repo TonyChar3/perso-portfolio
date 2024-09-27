@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 import { validate as uuidValidate } from "uuid";
-import { EmailTemplate } from "../components/email/email_template";
+import { EmailTemplate } from "../../lib/email/email_template";
 
 const { PUB_KEY } = JSON.parse(process.env.PUBLIC_KEY);
 import { Resend } from "resend";
