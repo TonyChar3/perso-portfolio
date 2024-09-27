@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { validate as uuidValidate } from "uuid";
 import { EmailTemplate } from "../components/email/email_template";
 
-const { PUB_KEY } = JSON.parse(process.env.NEXT_PUBLIC_PUBLIC_KEY);
+const { PUB_KEY } = JSON.parse(process.env.PUBLIC_KEY);
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.EMAIL_API_KEY);
