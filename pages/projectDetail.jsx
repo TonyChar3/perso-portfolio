@@ -77,10 +77,6 @@ const ProjectDetail = () => {
           {/* Buttons */}
           <RevealAnimation className="w-full md:w-[80%] my-10 md:my-16 flex flex-row justify-around items-center">
             <ProjectDetailButton
-              title="Live demo"
-              link={project ? project.projectUrl : "#"}
-            />
-            <ProjectDetailButton
               title="GitHub"
               link={project ? project.repoUrl : "#"}
             />
