@@ -62,19 +62,13 @@ export default function Home() {
             <RevealAnimation className="w-full flex flex-row justify-center items-center my-10">
               <div className="w-16 mx-4 flex flex-row justify-center bg-[#252525] p-3 rounded-full shadow-lg shadow-[#4B4B4B] hover:shadow-[#F7DC6F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100">
                 <Link href="https://twitter.com/tonyc6731" target="_blank">
-                  <i
-                    aria-hidden
-                    className="fa-brands fa-x-twitter text-4xl text-white"
-                  ></i>
+                  <i className="bi bi-twitter-x text-4xl text-white"></i>
                 </Link>
               </div>
 
               <div className="w-16 mx-4 flex flex-row justify-center bg-[#252525] p-3 rounded-full shadow-lg shadow-[#4B4B4B] hover:shadow-[#F7DC6F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100">
                 <Link href="#">
-                  <i
-                    aria-hidden
-                    className="fa-brands fa-instagram text-4xl text-white"
-                  ></i>
+                  <i className="bi bi-instagram text-4xl text-white"></i>
                 </Link>
               </div>
 
@@ -83,19 +77,13 @@ export default function Home() {
                   href="https://www.linkedin.com/in/anthony-charette-3b2655252"
                   target="_blank"
                 >
-                  <i
-                    aria-hidden
-                    className="fa-brands fa-linkedin text-4xl text-white"
-                  ></i>
+                  <i className="bi bi-linkedin text-4xl text-white"></i>
                 </Link>
               </div>
 
               <div className="w-16 mx-4 flex flex-row justify-center bg-[#252525] p-3 rounded-full shadow-lg shadow-[#4B4B4B] hover:shadow-[#F7DC6F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100">
                 <Link href="https://github.com/TonyChar3" target="_blank">
-                  <i
-                    aria-hidden
-                    className="fa-brands fa-github text-4xl text-white"
-                  ></i>
+                  <i class="bi bi-github text-4xl text-white"></i>
                 </Link>
               </div>
             </RevealAnimation>

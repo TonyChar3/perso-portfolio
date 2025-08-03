@@ -105,7 +105,7 @@ const ContactForm = () => {
                 <Link href="https://twitter.com/tonyc6731" target="_blank">
                   <i
                     aria-hidden
-                    className="fa-brands fa-x-twitter text-4xl text-white"
+                    className="bi bi-twitter-x text-4xl text-white"
                   ></i>
                 </Link>
               </div>
@@ -114,7 +114,7 @@ const ContactForm = () => {
                 <Link href="#">
                   <i
                     aria-hidden
-                    className="fa-brands fa-instagram text-4xl text-white"
+                    className="bi bi-instagram text-4xl text-white"
                   ></i>
                 </Link>
               </div>
@@ -126,7 +126,7 @@ const ContactForm = () => {
                 >
                   <i
                     aria-hidden
-                    className="fa-brands fa-linkedin text-4xl text-white"
+                    className="bi bi-linkedin text-4xl text-white"
                   ></i>
                 </Link>
               </div>
@@ -135,7 +135,7 @@ const ContactForm = () => {
                 <Link href="https://github.com/TonyChar3" target="_blank">
                   <i
                     aria-hidden
-                    className="fa-brands fa-github text-4xl text-white"
+                    className="bi bi-github text-4xl text-white"
                   ></i>
                 </Link>
               </div>
@@ -213,26 +213,20 @@ const ContactForm = () => {
             <Link href="https://twitter.com/tonyc6731" target="_blank">
               <i
                 aria-hidden
-                className="fa-brands fa-x-twitter text-lg md:text-2xl mx-1"
+                className="bi bi-twitter-x text-lg md:text-2xl mx-1"
               ></i>
             </Link>
             <Link href="https://www.instagram.com/tonydev.io" target="_blank">
-              <i
-                aria-hidden
-                className="fa-brands fa-instagram text-2xl mx-1"
-              ></i>
+              <i className="bi bi-instagram text-2xl mx-1"></i>
             </Link>
             <Link
               href="www.linkedin.com/in/anthony-charette-3b2655252"
               target="_blank"
             >
-              <i
-                aria-hidden
-                className="fa-brands fa-linkedin text-2xl mx-1"
-              ></i>
+              <i aria-hidden className="bi bi-linkedin text-2xl mx-1"></i>
             </Link>
             <Link href="https://github.com/TonyChar3" target="_blank">
-              <i aria-hidden className="fa-brands fa-github text-2xl mx-1"></i>
+              <i aria-hidden className="bi bi-github text-2xl mx-1"></i>
             </Link>
           </div>
         </RevealAnimation>
