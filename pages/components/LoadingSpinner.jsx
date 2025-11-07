@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ClipLoader } from "react-spinners";
 
-const LoadingSpinner = () => {
+const LoadingSpinner = ({ spinner_color = "#36456F" }) => {
   return (
     <>
       <motion.div
@@ -10,7 +10,7 @@ const LoadingSpinner = () => {
         exit={{ opacity: 0, transition: { duration: 0.1 } }}
         className="h-full w-full flex flex-row justify-center items-center"
       >
-        <ClipLoader color={"#36456F"} size={150} />
+        <ClipLoader color={spinner_color} size={150} />
       </motion.div>
     </>
   );

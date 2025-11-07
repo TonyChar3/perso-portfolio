@@ -83,7 +83,7 @@ export default function Home() {
 
               <div className="w-16 mx-4 flex flex-row justify-center bg-[#252525] p-3 rounded-full shadow-lg shadow-[#4B4B4B] hover:shadow-[#F7DC6F] active:scale-[0.90] hover:scale-[1.05] transform-all ease duration-100">
                 <Link href="https://github.com/TonyChar3" target="_blank">
-                  <i class="bi bi-github text-4xl text-white"></i>
+                  <i className="bi bi-github text-4xl text-white"></i>
                 </Link>
               </div>
             </RevealAnimation>

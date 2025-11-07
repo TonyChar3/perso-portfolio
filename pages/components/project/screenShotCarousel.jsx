@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import RevealAnimation from "../scroll_animate/RevealAnimate";
+import LoadingSpinner from "../LoadingSpinner";
 import Image from "next/image";
 
 const ScreenShotCarousel = ({ img_array }) => {
@@ -10,7 +11,10 @@ const ScreenShotCarousel = ({ img_array }) => {
   const [direction, setDirection] = useState("");
   const [pending, setPending] = useState(false);
 
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   const increment = () => {
+    console.log(count);
     setDirection("right");
     let val = count;
     if (val == max - 1) {
@@ -36,8 +40,16 @@ const ScreenShotCarousel = ({ img_array }) => {
     }
   }, [img_array]);
 
+  useEffect(() => {
+    if (!imageLoaded) {
+      setImageLoaded(false);
+    }
+  }, [count]);
+
   const handleExitComplete = () => {
+    console.log(direction);
     setCount((prev) => {
+      console.log(prev);
       if (direction === "right") {
         return prev === max - 1 ? 0 : prev + 1;
       } else if (direction === "left") {
@@ -57,14 +69,14 @@ const ScreenShotCarousel = ({ img_array }) => {
             className="absolute z-10 left-5 w-[9%] 2xl:w-[7%] bg-[#252525] p-4 2xl:p-3 text-white rounded-full shadow-lg shadow-[#4B4B4B] active:scale-[0.90] ease transition-all duration-300"
             onClick={() => decrement()}
           >
-            <i aria-hidden class="bi bi-dash text-2xl 2xl:text-4xl"></i>
+            <i aria-hidden className="bi bi-dash text-2xl 2xl:text-4xl"></i>
           </button>
           <div className="w-full flex flex-row justify-center items-center">
             <AnimatePresence onExitComplete={handleExitComplete} mode="wait">
               {!pending && (
                 <motion.div
                   key={count}
-                  className="bg-gray-500 my-4 md:my-8 rounded-lg shadow-lg shadow-gray-400"
+                  className="my-4 md:my-8 rounded-lg shadow-lg shadow-gray-400"
                   initial={{
                     opacity: 0,
                     x:
@@ -86,14 +98,24 @@ const ScreenShotCarousel = ({ img_array }) => {
                   }}
                   transition={{ ease: "easeInOut", duration: 0.3 }}
                 >
-                  <Image
-                    src={img_array ? img_array[count].url : ""}
-                    width={600}
-                    height={600}
-                    alt="picture of the project"
-                    style={{ objectFit: "contain" }}
-                    className="hidden lg:block rounded-lg"
-                  />
+                  <div className="relative w-full h-[300px]">
+                    {!imageLoaded && (
+                      <div className="absolute w-full h-full inset-0 rounded-lg flex items-center justify-center animate-pulse">
+                        <LoadingSpinner spinner_color="#F7DC6F" />
+                      </div>
+                    )}
+                    {img_array && (
+                      <Image
+                        src={img_array ? img_array[count].url : ""}
+                        alt="picture of the project"
+                        width={600}
+                        height={300}
+                        onLoad={() => setImageLoaded(true)}
+                        style={{ objectFit: "contain" }}
+                        className={`rounded-lg transition-opacity duration-300 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
+                      />
+                    )}
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -102,7 +124,7 @@ const ScreenShotCarousel = ({ img_array }) => {
             className="absolute z-10 right-5 w-[9%] 2xl:w-[7%] bg-[#252525] p-4 2xl:p-3 text-white rounded-full shadow-lg shadow-[#4B4B4B] active:scale-[0.90] ease transition-all duration-300"
             onClick={() => increment()}
           >
-            <i aria-hidden class="bi bi-plus text-2xl 2xl:text-4xl"></i>
+            <i aria-hidden className="bi bi-plus text-2xl 2xl:text-4xl"></i>
           </button>
         </RevealAnimation>
       </div>
