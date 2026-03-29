@@ -58,7 +58,7 @@ export default function App({ Component, pageProps }) {
         />
         <div
           ref={outletRef}
-          className="w-full h-[100%] fixed overflow-y-auto overflow-x-hidden flex-grow"
+          className="w-full h-full fixed overflow-y-auto overflow-x-hidden grow"
         >
           <AnimatePresence mode="wait" initial={false}>
             <Component key={pageProps.uniqueKey} {...pageProps} />

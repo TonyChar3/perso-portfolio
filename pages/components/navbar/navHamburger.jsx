@@ -37,7 +37,7 @@ const NavHamburger = ({ setMobileNav, open_mobile_nav, user_isScroll }) => {
 
           <div
             className={`h-1 my-[.36em] rounded-full bg-[#FFFFFF] transition ease transform duration-300 
-                    md:h-[4.5px] md:w-[100%] md:my-[.6em] 
+                    md:h-[4.5px] md:w-full md:my-[.6em] 
                     ${
                       open_mobile_nav
                         ? "w-8 -rotate-45 -translate-y-3 md:-translate-y-4"

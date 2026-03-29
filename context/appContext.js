@@ -68,13 +68,19 @@ export const MyContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const fetchAllProjects = async () => {
-    const response = await fetchProjects();
     dispatch({ type: "DATA_LOADING", payload: { isLoading: true } });
-    if (response) {
-      dispatch({
-        type: "SET_PROJECTS_LIST",
-        payload: { project_array: response },
-      });
+    try {
+      const response = await fetchProjects();
+      if (response) {
+        dispatch({
+          type: "SET_PROJECTS_LIST",
+          payload: { project_array: response },
+        });
+      }
+    } catch (err) {
+      // do nothing...
+    } finally {
+      dispatch({ type: "DATA_LOADING", payload: { isLoading: false } });
     }
   };
 

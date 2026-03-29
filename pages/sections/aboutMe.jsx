@@ -7,8 +7,8 @@ const AboutMeSection = () => {
       <div id="about-me"></div>
       <div className="w-full lg:h-full p-6 flex flex-col lg:flex-row items-center justify-center lg:justify-around text-[#36456F]">
         {/* About me paragraph */}
-        <RevealAnimation className="w-full lg:w-[55%] h-[100%] my-8 flex flex-col items-center lg:flex-row lg:justify-between">
-          <div className="md:w-[80%] lg:order-2 lg:w-[100%] text-white">
+        <RevealAnimation className="w-full lg:w-[55%] h-full my-8 flex flex-col items-center lg:flex-row lg:justify-between">
+          <div className="md:w-[80%] lg:order-2 lg:w-full text-white">
             <h2 className="text-3xl md:text-4xl md:p-2 font-bold lg:text-5xl lg:p-3">
               A bit
               <span className="ml-2 text-[#F7DC6F]">about me</span>.

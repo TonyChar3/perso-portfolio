@@ -21,7 +21,7 @@ export default function Home() {
     <>
       {/* Main hero section */}
       <RevealAnimation
-        className="relative flex flex-col justify-center items-center w-full h-[100%] z-60"
+        className="relative flex flex-col justify-center items-center w-full h-full z-60"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 0.1 } }}
@@ -50,7 +50,7 @@ export default function Home() {
                   <span className="mx-2 font-bold">Anthony</span>
                   <span className="font-bold text-[#F7DC6F]">Charette</span>
                 </motion.div>
-                <div className="w-full px-10 text-xl md:text-2xl md:px-0 md:my-4 md:w-[100%] lg:my-0 lg:px-0 lg:w-[45%] lg:text-2xl text-white mb-4 flex flex-row justify-start lg:justify-center items-center">
+                <div className="w-full px-10 text-xl md:text-2xl md:px-0 md:my-4 md:w-full lg:my-0 lg:px-0 lg:w-[45%] lg:text-2xl text-white mb-4 flex flex-row justify-start lg:justify-center items-center">
                   <span>Full-</span>
                   <span className="mr-2 text-[#F7DC6F]">Stack</span>
                   <span className="mx-1 font-bold">developer</span>
@@ -96,8 +96,8 @@ export default function Home() {
 
             {/* X cube */}
             <div className="relative w-[38%] h-[50%] flex flex-row justify-center items-center m-3 animate-[spin_1s_ease-in-out]">
-              <div className="absolute w-[100%] rotate-45 h-[5%] border-2 border-white"></div>
-              <div className="w-[100%] -rotate-45 h-[5%] border-2 border-[#F7DC6F]"></div>
+              <div className="absolute w-full rotate-45 h-[5%] border-2 border-white"></div>
+              <div className="w-full -rotate-45 h-[5%] border-2 border-[#F7DC6F]"></div>
             </div>
 
             {/* Cube #3 */}
@@ -109,7 +109,7 @@ export default function Home() {
         </div>
 
         {/* Decorative vertical line */}
-        <div className="hidden lg:block absolute z-[30] left-[5%] top-0 bg-[#F7DC6F] w-1 h-[70%]"></div>
+        <div className="hidden lg:block absolute z-30 left-[5%] top-0 bg-[#F7DC6F] w-1 h-[70%]"></div>
 
         {/* Scroll down message */}
         <ScrollDownMessage

@@ -23,19 +23,20 @@ const getProjects = async (req, res) => {
       if (!validation) {
         return NextResponse.json({ message: "Unauthorized" }, { status: 403 });
       }
-      const projects_array = await Project.find();
+      // const projects_array = await Project.find();
+      const projects_array = [];
       res.status(200).send(projects_array);
     } catch (err) {
       return NextResponse.json(
         { message: "ERROR fetching projects" },
-        { status: 500 }
+        { status: 500 },
       );
     }
   } else {
     res.status(403).send("Wrong method error");
     return NextResponse.json(
       { message: "Wrong methode error" },
-      { status: 403 }
+      { status: 403 },
     );
   }
 };

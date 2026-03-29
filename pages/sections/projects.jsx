@@ -6,8 +6,8 @@ const ProjectsSection = ({ loading, project_list }) => {
   return (
     <>
       <div id="projects"></div>
-      <RevealAnimation className="w-full h-[100%] p-6 flex flex-col justify-center items-center">
-        <div className="text-left md:w-[100%] lg:w-[90%]">
+      <RevealAnimation className="w-full h-full p-6 flex flex-col justify-center items-center">
+        <div className="text-left md:w-full lg:w-[90%]">
           <h3 className="text-3xl font-bold md:text-4xl md:p-4 lg:p-3 text-white">
             My best
             <span className="mx-2 text-[#F7DC6F]">projects</span>

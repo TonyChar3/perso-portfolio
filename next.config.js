@@ -2,8 +2,9 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ['ik.imagekit.io']
-  }
-}
+    domains: ["ik.imagekit.io"],
+  },
+  allowedDevOrigins: ["10.0.0.33"],
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
